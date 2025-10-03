@@ -1,19 +1,28 @@
-import { Dimensions, StyleSheet } from 'react-native';
-import 'react-native-reanimated';
+import { Button, Dimensions, Image, StyleSheet, Text, TextInput, View } from 'react-native';
 
-import HomeScreen from '../components/ui/HomeScreen';
-import LoginScreen from '../components/ui/LoginScreen';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+export default function LoginScreen({ navigation }) {
 
-const Stack = createNativeStackNavigator();
+    const handleLogin = () => 
+    {
+        navigation.navigate('Home')
+    }
 
-export default function RootLayout() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name="Login" component={LoginScreen}/>
-      <Stack.Screen name="Home" component={HomeScreen}/>
-    </Stack.Navigator>
-  );
+    return (
+        <View style={styles.loginBoxContainer}>
+          <TextInput
+            placeholder="Email"
+            keyboardType="email-address"
+            autoCapitalize="none"
+            style={styles.input}
+          />
+          <TextInput
+            placeholder="Senha"
+            secureTextEntry={true}
+            style={styles.input}
+          />
+          <Button title="Entrar" onPress={handleLogin} />
+        </View>
+      );
 }
 
 const styles = StyleSheet.create({

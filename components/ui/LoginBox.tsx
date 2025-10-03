@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 20,
   },
+
 });
 
 export default LoginBox;

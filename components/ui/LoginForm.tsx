@@ -28,7 +28,7 @@ const LoginForm = ({ onSubmit }: Props) => {
         value={email}
         onChangeText={setEmail}
       />
-      <Button title="Entrar" onPress={handleSubmit} />
+      <Button title="Entrar" onPress={handleSubmit} color="#731010ff" />
     </View>
   );
 };
